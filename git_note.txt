@@ -6,3 +6,6 @@
 3：将要进行版本控制的文件放到版本库路径下：
     git add example.txt             //将文件添加到版本库
     git commit  -m   " "                //将修改提交  -m参数指的是提交修改的说明
+4:
+    git status                          //查看仓库当前状态
+    git fiff   example.txt                       //
