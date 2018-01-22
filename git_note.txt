@@ -1,0 +1,6 @@
+1:安装好git后，先设置基本信息:
+    git config --global user.name ""  //用户名称
+    git config --global user.email "" //用户邮箱
+2：进入到想要创建版本库（repository）的路径下：
+    git init                         //初始化一个版本库
+3：
