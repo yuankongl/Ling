@@ -4,8 +4,16 @@
 2：进入到想要创建版本库（repository）的路径下：
     git init                         //初始化一个版本库
 3：将要进行版本控制的文件放到版本库路径下：
-    git add example.txt             //将文件添加到版本库
-    git commit  -m   " "                //将修改提交  -m参数指的是提交修改的说明
+    git add example.txt             //将文件添加到版本库，实际上就是把文件修改添加到暂存区
+    git commit  -m   " "                //将修改提交  -m参数指的是提交修改的说明，实际上就是把暂存区的所有内容提交到当前分支
 4:
     git status                          //查看仓库当前状态
-    git fiff   example.txt                       //
+    git fiff   example.txt                       // 查看修改详情
+5:
+    git reset --hard HEAD^           //回退到上一版本   HEAD~10  回退到前10个版本
+    git reset --hard commit id       //恢复到所指版本id的状态
+    git reflog                      //用来记录你的每一次命令，可以查看命令所对应的版本号
+Git在内部有个指向当前版本的HEAD指针，以上都可视为移动指针。
+6：
+    git checkout -- file           //可以丢弃工作区的修改
+    git reset HEAD file            //可以把暂存区的修改撤销掉（unstage），重新放回工作区，HEAD表示最新的版本。
