@@ -14,6 +14,16 @@
     git reset --hard commit id       //恢复到所指版本id的状态
     git reflog                      //用来记录你的每一次命令，可以查看命令所对应的版本号
 Git在内部有个指向当前版本的HEAD指针，以上都可视为移动指针。
-6：
-    git checkout -- file           //可以丢弃工作区的修改
+6：当修改只是add没有commit时，可以通过以下指令撤销add。
+    git checkout -- file           //可以丢弃工作区的修改,也可以恢复误删的软件
     git reset HEAD file            //可以把暂存区的修改撤销掉（unstage），重新放回工作区，HEAD表示最新的版本。
+    git rm file                    //删除文件
+
+二：使用远程仓库（github）
+1：ssh-keygen -t rsa -C "youremail@example.com"   创建ssh key
+            为什么GitHub需要SSH Key呢？因为GitHub需要识别出你推送的提交确实是你推送的，而不是别人冒充的，而Git支持SSH协议，所以，GitHub只要知道了你的公钥，就可以确认只有你自己才能推送。
+            当然，GitHub允许你添加多个Key。假定你有若干电脑，你一会儿在公司提交，一会儿在家里提交，只要把每台电脑的Key都添加到GitHub，就可以在每台电脑上往GitHub推送了  
+2:在本地仓库下运行命令：
+    git remote add 远程仓库别名 git@github.com:yuankongl/learngit.git //关联远程仓库
+    git push -u 远程仓库别名 master                            //把本地库的所有内容推送到远程库上
+  
